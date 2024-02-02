@@ -10,6 +10,8 @@ function [J1, J2, J3] = calc_J_scores(X, X1, X2)
           (mu_2 - mu_0).' * (mu_2 - mu_0);
 
     % Calculate within-class scatter matrices (S1 and S2)
+    disp(size(mu_1))
+    for i=1
     S1 = 1/size(X1, 1) * (X1 - mu_1).' * (X1 - mu_1);
     S2 = 1/size(X2, 1) * (X2 - mu_2).' * (X2 - mu_2);
 
