@@ -1,0 +1,33 @@
+function feature_space = create_all_feature_space(data, fs, n_bins, amp_range, order)
+
+    BP_feature = calc_featuer_band_power(data, fs);
+    
+    Amp_hist_feature = calc_feature_amp_hist(data, n_bins, amp_range);
+
+    AR_Coef_feature = calc_feature_AR_Coef(data, order);
+
+    corr_feature = calc_feature_corr(data);
+
+    FF_feature = calc_feature_FF(data);
+
+    max_freq_feature = calc_feature_max_freq(data, fs);
+
+    mean_freq_feature = calc_feature_mean_freq(data, fs);
+
+    med_freq_feature = calc_feature_med_freq(data, fs);
+
+    var_feature = calc_feature_var(data);
+    
+    feature_space = struct(...
+        'BP', BP_feature, ...
+        'Amp_hist', Amp_hist_feature, ...
+        'AR_Coef', AR_Coef_feature, ...
+        'corr', corr_feature, ...
+        'FF', FF_feature, ...
+        'max_freq', max_freq_feature, ...
+        'mean_freq', mean_freq_feature, ...
+        'med_freq', med_freq_feature, ...
+        'var', var_feature ...
+        );
+
+end
