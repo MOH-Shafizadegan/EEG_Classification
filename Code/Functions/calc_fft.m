@@ -1,6 +1,6 @@
-function [f, amp] = calc_fft(signal)
+function [f, amp] = calc_fft(signal, Fs)
     
-    N = size(signal,1);
+    N = length(signal);
     sig_fft = fft(signal);
     amp = abs(sig_fft/N);
     amp = amp(1:N/2+1);
