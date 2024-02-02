@@ -1,7 +1,6 @@
 function calc_featuer_band_power(data, fs)
 
     n_trials = size(data, 3);
-    n_samples = size(data, 2);
     n_channels = size(data, 1);
     n_bands = 5;
 
