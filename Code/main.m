@@ -116,7 +116,7 @@ k = 5;
 %%
 clc;
 
-n_feature = 200;
+n_feature = 100;
 max_feature_num = 5643;
 
 % Set up PSO parameters
@@ -135,8 +135,8 @@ ub = repelem(max_feature_num, n_feature);
 %%
 clc;
 
-n_hidden = 400;
-sigma = 0.75;
+n_hidden = 10;
+sigma = 0.5;
 k = 5;
 [RBF_net_2, RBF_avgMSE_2, RBF_accuracy_2] = train_RBF(n_hidden, sigma, ...
            Train_feature_space.all(:, round(bestFeatureIndicies)), TrainLabels, k);
