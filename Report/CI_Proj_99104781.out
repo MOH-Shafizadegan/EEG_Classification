@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Overview}{}% 1
+\BOOKMARK [1][-]{section.2}{Feature\040Extraction}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Statistical\040time\040domain\040features}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Frequency\040domain\040features}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Mapping\040data\040to\040feature\040space}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Feature\040selection}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{One\040dimensional\040Fisher\040score}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Bulky\040feature\040selection\040using\040Jscore}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Utilizing\040PSO\040in\040bulky\040feature\040selection\040using\040Jscore}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Model\040Training}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{MLP}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{RBF}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Model\040Hyper\040parameters}{section.4}% 13
