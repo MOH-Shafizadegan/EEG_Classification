@@ -561,7 +561,7 @@
 	
 	Now we train the RBF model. Regarding what we discussed about finding the best parameters for the RBF model, we decided to select the followings:
 	\begin{lstlisting}
-		n_hidden = 1000;
+		n_hidden = 500;
 		sigma = 1;
 		k = 5;
 		[RBF_net, RBF_avgMSE, RBF_accuracy] = train_RBF(n_hidden, sigma, selected_feature_space, Trainlabels, k);
@@ -584,7 +584,8 @@
 	\pict{0.6}{F11}
 	Here are the results for the RBF network:
 	\pict{0.6}{F10}
-	The average accuracy is 51\% which is relatively low.
+	The average accuracy is 51\% which is relatively low.\\\\\\
+	Also we note that all output labels are generated and stored in the corresponding directory for different methods regarding the given test data.
 	
 	\section{Limitations and future works}
 	In this project we tried to predict the sentiment of the stimulus using recorded EEG data. Unfortunately, we failed to achieve an acceptably high accuracy. This is mainly because of the followings:
