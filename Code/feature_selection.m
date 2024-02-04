@@ -53,7 +53,25 @@ save(strcat(directory, '/Testlabels.mat'), 'Testlabels');
 
 clc;
 
-n_hidden = 163;
-sigma = 5;
+n_hidden = 500;
+sigma = 1;
 k = 5;
 [RBF_net, RBF_avgMSE, RBF_accuracy] = train_RBF(n_hidden, sigma, selected_feature_space, Trainlabels, k);
+
+%% Preedict test labels
+
+test_selected_feature_space = Test_data.all(:, train_indicies);
+RBF_Testlabels = RBF_net(test_selected_feature_space');
+
+% save labels
+
+directory = '../Results/RBF_fisher';
+
+if ~exist(directory, 'dir')
+    mkdir(directory);
+    disp('Directory created successfully.');
+else
+    disp('Directory already exists.');
+end
+
+save(strcat(directory, '/RBF_Testlabels.mat'), 'RBF_Testlabels');

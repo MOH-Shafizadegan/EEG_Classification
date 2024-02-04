@@ -35,6 +35,27 @@ hiddenLayers = [10, 20, 10];
 k = 5;
 [MLP_net, avgMSE, accuracy] = train_MLP(hiddenLayers, Train_data.all(:, round(bestFeatureIndicies)), Trainlabels, k);
 
+%% Preedict test labels
+
+indicies = round(bestFeatureIndicies);
+indicies(indicies >= 4861) = 4861;
+test_selected_feature_space = Test_data.all(:, indicies);
+MLP_Testlabels = MLP_net(test_selected_feature_space');
+
+% save labels
+
+directory = '../Results/MLP_PSO_JScore';
+
+if ~exist(directory, 'dir')
+    mkdir(directory);
+    disp('Directory created successfully.');
+else
+    disp('Directory already exists.');
+end
+
+save(strcat(directory, '/MLP_Testlabels.mat'), 'MLP_Testlabels');
+
+
 %% RBF
 clc;
 
@@ -43,6 +64,23 @@ sigma = 2;
 k = 5;
 [RBF_net_2, RBF_avgMSE_2, RBF_accuracy_2] = train_RBF(n_hidden, sigma, ...
            Train_data.all(:, round(bestFeatureIndicies)), Trainlabels, k);
+
+%%
+
+RBF_Testlabels = RBF_net_2(test_selected_feature_space');
+
+% save labels
+
+directory = '../Results/RBF_PSO_JScore';
+
+if ~exist(directory, 'dir')
+    mkdir(directory);
+    disp('Directory created successfully.');
+else
+    disp('Directory already exists.');
+end
+
+save(strcat(directory, '/RBF_Testlabels.mat'), 'RBF_Testlabels');
 
 %%
 function out = PSO_calc_Jscore(data, feature_Indicies, labels)

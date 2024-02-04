@@ -1,4 +1,4 @@
-function [selected_features, featureScores] = select_feature_Jscores(data, n_feature, n_comb, labels)
+function [selected_features, J1_sortedIndices, featureScores] = select_feature_Jscores(data, n_feature, n_comb, labels)
     fields = fieldnames(data);
     numFields = numel(fields);
     
