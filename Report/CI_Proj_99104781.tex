@@ -542,6 +542,44 @@
 			
 		end
 	\end{lstlisting}
-	Surprisingly, execution of this code took more than 7 hours!!! Based on the logged value, we estimated the best hyper parameters for our model and will use it in the next steps of the project.
+	Surprisingly, execution of this code took more than 7 hours!!! Based on the logged values, we estimated the best hyper parameters for our model and will use it in the next steps of the project.
+	
+	\section{Results}
+	\subsection{Feature selection using Fisher score}
+	Following the first methodology we discussed before, the best fisher score when considering all features can be seen below:
+	\pict{1}{F5}
+	In the following we will use top 100 features. Then we first train a MLP network with 3 hidden layers. Finally we will report the average accuracy:
+	\begin{lstlisting}
+		hiddenLayers = [10, 20, 10];
+		k = 5;
+		[MLP_net, avgMSE, accuracy] = train_MLP(hiddenLayers, selected_feature_space, Trainlabels, k);
+	\end{lstlisting}
+	The result can be seen below:
+	\pict{0.6}{F6}
+	The average accuracy is 71.6 \%.
+	
+	Now we train the RBF model. Regarding what we discussed about finding the best parameters for the RBF model, we decided to select the followings:
+	\begin{lstlisting}
+		n_hidden = 1000;
+		sigma = 1;
+		k = 5;
+		[RBF_net, RBF_avgMSE, RBF_accuracy] = train_RBF(n_hidden, sigma, selected_feature_space, Trainlabels, k);
+	\end{lstlisting}
+	The results can be seen below:
+	\pict{0.6}{F7}
+	It can be seen the this model doesn't perform well enough. The average accuracy is 51.45 \%.
+	
+	
+	\section{Limitations and future works}
+	In this project we tried to predict the sentiment of the stimulus using recorded EEG data. Unfortunately, we failed to achieve an acceptably high accuracy. This is mainly because of the followings:
+	\begin{itemize}
+		\item \textbf{Features:}\\
+		Only simple time domain and frequency domain features were considered in this project. Time-frequency features like wavelet transform can enhance the performance of the model as its more complicated feature. Another category of features which can be extremely effective is connectivity measures. In this article, the authors used Phase Lock Value as a measure of connectivity between electrodes. Phase Amplitude Coupling is a better measure of connectivity which can be used here.\\\\
+		Since we are dealing with sentiments, we know that amygdala is involved in this task. We hypothesize that connectivity between amygdala and medial Prefrontal Cortex, encode the type of sentiment and we can search for the sentiment signature here. We note that since our recording are non-invasive EEG, we first have to localize our signals using methods like LORETA.
+		
+		\item \textbf{Models:}\\
+		We used simple MLP and RBF models. These models are dealing with lots of hyper parameters e.g. number of hidden layers, number of neurons in each hidden layer, number of output neurons (one hot encoding, binary encoding), spread of neurons in RBF network, etc. The parameters can be set using optimization procedure. Higher performance can be achieved this way.\\\\
+		Other models like logistic regression and Random Forest can be used for this classification task.
+	\end{itemize}
 	
 \end{document}
