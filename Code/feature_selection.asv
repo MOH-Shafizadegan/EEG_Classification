@@ -47,13 +47,13 @@ else
     disp('Directory already exists.');
 end
 
-save(strcat(directory, '/Testlabels.mat'), 'Testlabels');
+save(strcat(directory, 'Testlabels.mat'))
 
 %% RBF
 
 clc;
 
-n_hidden = 163;
-sigma = 5;
+n_hidden = 1000;
+sigma = 0.5;
 k = 5;
 [RBF_net, RBF_avgMSE, RBF_accuracy] = train_RBF(n_hidden, sigma, selected_feature_space, Trainlabels, k);

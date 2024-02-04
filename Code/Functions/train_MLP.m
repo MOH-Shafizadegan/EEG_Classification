@@ -1,4 +1,4 @@
-function [net, avgMSE, accuracy] = train_MLP(n_hidden, trainX, trainY, k)
+function [net, avgMSE, accuracy] = train_MLP(hiddenLayers, trainX, trainY, k)
     % Initialize array to store MSE for each fold
     foldMSE = zeros(1, k);
     foldAccuracy = zeros(1, k);
@@ -17,7 +17,7 @@ function [net, avgMSE, accuracy] = train_MLP(n_hidden, trainX, trainY, k)
         foldValY = trainY(valIndices);
         
         % Create the MLP model
-        net = fitnet(n_hidden, 'trainlm');
+        net = fitnet(hiddenLayers, 'trainlm');
 
         % Set the training parameters
         net.trainParam.showWindow = false;  % Disable training window display
@@ -34,7 +34,7 @@ function [net, avgMSE, accuracy] = train_MLP(n_hidden, trainX, trainY, k)
         % Calculate the MSE for the validation set
         foldMSE(fold) = mean((valPred - foldValY).^2);
         
-        foldAccuracy(fold) = sum(round(valPred) == foldValY) / numel(foldValY);
+        foldAccuracy(fold) = sum(round(valPred) == foldValY) / numel(foldValY)
 
         fprintf("Step %d / %d ... \n", fold, k)
     end
