@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2022.7.25)  3 FEB 2024 14:45
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2022.7.25)  4 FEB 2024 09:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -502,33 +502,51 @@ File: Fig/F6.png Graphic file (type bmp)
  [12]
 File: Fig/F7.png Graphic file (type bmp)
 <Fig/F7.png>
+File: Fig/F8.png Graphic file (type bmp)
+<Fig/F8.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 576--579
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 580--583
+Underfull \hbox (badness 10000) in paragraph at lines 576--578
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 585.
+File: Fig/F9.png Graphic file (type bmp)
+<Fig/F9.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 582--584
+
+ []
+
+File: Fig/F11.png Graphic file (type bmp)
+<Fig/F11.png>
+File: Fig/F10.png Graphic file (type bmp)
+<Fig/F10.png>
 [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 585.
+Underfull \hbox (badness 10000) in paragraph at lines 592--595
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--599
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 601.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 601.
  (./CI_Proj_99104781.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 585.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 585.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 601.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 601.
 Package rerunfilecheck Info: File `CI_Proj_99104781.out' has not changed.
-(rerunfilecheck)             Checksum: 0581A2D85A25DAF23C3912C9E93893CC;1171.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
+(rerunfilecheck)             Checksum: 3862C937330B825225058559A9332D83;1364.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 601.
  ) 
 Here is how much of TeX's memory you used:
- 12304 strings out of 479418
- 172105 string characters out of 5888105
+ 12328 strings out of 479418
+ 172389 string characters out of 5888105
  678750 words of memory out of 5000000
- 29633 multiletter control sequences out of 15000+600000
+ 29653 multiletter control sequences out of 15000+600000
  540990 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  34i,12n,45p,739b,1803s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on CI_Proj_99104781.pdf (13 pages).
+Output written on CI_Proj_99104781.pdf (14 pages).

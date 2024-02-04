@@ -545,10 +545,11 @@
 	Surprisingly, execution of this code took more than 7 hours!!! Based on the logged values, we estimated the best hyper parameters for our model and will use it in the next steps of the project.
 	
 	\section{Results}
+	In this section we will report the results considering the best found models for each case.
 	\subsection{Feature selection using Fisher score}
 	Following the first methodology we discussed before, the best fisher score when considering all features can be seen below:
 	\pict{1}{F5}
-	In the following we will use top 100 features. Then we first train a MLP network with 3 hidden layers. Finally we will report the average accuracy:
+	In the following we will use top 100 features. Then we first train a MLP network with 3 hidden layers. Finally we will report the average accuracy. The feature space dimension for this section is 100.
 	\begin{lstlisting}
 		hiddenLayers = [10, 20, 10];
 		k = 5;
@@ -569,6 +570,21 @@
 	\pict{0.6}{F7}
 	It can be seen the this model doesn't perform well enough. The average accuracy is 51.45 \%.
 	
+	\subsection{Bulky Feature selection using J score}
+	In this section, we used grid search to find the best "n" combination of features based on Jscore. Then we train the MLP network with 4 hidden layers containing 10, 20, 20 and 10 neurons. Then we evaluate it using 5-fold cross validation. Here are the results. The feature space dimension for this section is 200.
+	\pict{0.6}{F8}
+	The average accuracy is about 72\%.\\\\
+	Then we generate the results for RBF network.
+	\pict{0.6}{F9}
+	Unfortunately, it can be seen that the RBF network has a poor performance.
+	
+	\subsection{Feature selection empowering PSO}
+	Here we present the results generated when we select the features using PSO algorithm.\\\\
+	Here are the results for the MLP network with 3 hidden layers containing 10, 20 and 10 neurons. The feature space dimension is 200.
+	\pict{0.6}{F11}
+	Here are the results for the RBF network:
+	\pict{0.6}{F10}
+	The average accuracy is 51\% which is relatively low.
 	
 	\section{Limitations and future works}
 	In this project we tried to predict the sentiment of the stimulus using recorded EEG data. Unfortunately, we failed to achieve an acceptably high accuracy. This is mainly because of the followings:

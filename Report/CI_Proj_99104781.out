@@ -13,4 +13,6 @@
 \BOOKMARK [2][-]{subsection.4.3}{Model\040Hyper\040parameters}{section.4}% 13
 \BOOKMARK [1][-]{section.5}{Results}{}% 14
 \BOOKMARK [2][-]{subsection.5.1}{Feature\040selection\040using\040Fisher\040score}{section.5}% 15
-\BOOKMARK [1][-]{section.6}{Limitations\040and\040future\040works}{}% 16
+\BOOKMARK [2][-]{subsection.5.2}{Bulky\040Feature\040selection\040using\040J\040score}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.3}{Feature\040selection\040empowering\040PSO}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Limitations\040and\040future\040works}{}% 18
