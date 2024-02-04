@@ -12,7 +12,7 @@ Test_data = load('../Data/Test_feature_space.mat').Test_feature_space;
 %%
 clc;
 
-n_feature = 50;
+n_feature = 200;
 max_feature_num = 5643;
 
 % Set up PSO parameters
@@ -28,11 +28,18 @@ ub = repelem(max_feature_num, n_feature);
 
 [bestFeatureIndicies, cost] = particleswarm(objectiveFunction, numVariables, lb, ub, options);
 
-%%
+%% MLP
+
+clc;
+hiddenLayers = [10, 20, 10];
+k = 5;
+[MLP_net, avgMSE, accuracy] = train_MLP(hiddenLayers, Train_data.all(:, round(bestFeatureIndicies)), Trainlabels, k);
+
+%% RBF
 clc;
 
-n_hidden = 1000;
-sigma = 0.5;
+n_hidden = 30;
+sigma = 2;
 k = 5;
 [RBF_net_2, RBF_avgMSE_2, RBF_accuracy_2] = train_RBF(n_hidden, sigma, ...
            Train_data.all(:, round(bestFeatureIndicies)), Trainlabels, k);

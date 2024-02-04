@@ -18,7 +18,7 @@ n_comb = 5000;
 %% MLP
 
 clc;
-hiddenLayers = [10, 20, 10];
+hiddenLayers = [10, 20, 20, 10];
 k = 5;
 [MLP_net, avgMSE, accuracy] = train_MLP(hiddenLayers, J1_selected_features, Trainlabels, k);
 
@@ -26,7 +26,7 @@ k = 5;
 
 clc;
 
-n_hidden = 1000;
-sigma = 0.5;
+n_hidden = 30;
+sigma = 2;
 k = 5;
 [RBF_net, RBF_avgMSE, RBF_accuracy] = train_RBF(n_hidden, sigma, J1_selected_features, Trainlabels, k);
