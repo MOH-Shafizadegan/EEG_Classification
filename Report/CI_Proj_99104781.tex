@@ -557,41 +557,41 @@
 	\end{lstlisting}
 	The result can be seen below:
 	\pict{0.6}{F6}
-	The average accuracy is 71.6 \%.
+	The average accuracy is 75.6 \%.
 	
 	Now we train the RBF model. Regarding what we discussed about finding the best parameters for the RBF model, we decided to select the followings:
 	\begin{lstlisting}
-		n_hidden = 500;
-		sigma = 1;
+		n_hidden = 30;
+		sigma = 5;
 		k = 5;
 		[RBF_net, RBF_avgMSE, RBF_accuracy] = train_RBF(n_hidden, sigma, selected_feature_space, Trainlabels, k);
 	\end{lstlisting}
 	The results can be seen below:
 	\pict{0.6}{F7}
-	It can be seen the this model doesn't perform well enough. The average accuracy is 51.45 \%.
+	It can be seen the average accuracy is 70.36 \%.
 	
 	\subsection{Bulky Feature selection using J score}
-	In this section, we used grid search to find the best "n" combination of features based on Jscore. Then we train the MLP network with 4 hidden layers containing 10, 20, 20 and 10 neurons. Then we evaluate it using 5-fold cross validation. Here are the results. The feature space dimension for this section is 200.
+	In this section, we used grid search to find the best "n" combination of features based on Jscore. Then we train the MLP with exactly the same architecture as before. Then we evaluate it using 5-fold cross validation. Here are the results. The feature space dimension for this section is 100.
 	\pict{0.6}{F8}
 	The average accuracy is about 72\%.\\\\
 	Then we generate the results for RBF network.
 	\pict{0.6}{F9}
-	Unfortunately, it can be seen that the RBF network has a poor performance.
+	The average accuracy is 72\%.
 	
 	\subsection{Feature selection empowering PSO}
 	Here we present the results generated when we select the features using PSO algorithm.\\\\
-	Here are the results for the MLP network with 3 hidden layers containing 10, 20 and 10 neurons. The feature space dimension is 200.
-	\pict{0.6}{F11}
-	Here are the results for the RBF network:
+	Here are the results for the MLP network with 3 hidden layers containing 10, 20 and 10 neurons. The feature space dimension is 200. 
 	\pict{0.6}{F10}
-	The average accuracy is 51\% which is relatively low.\\\\\\
+	Here are the results for the RBF network:
+	\pict{0.6}{F11}
+	The average accuracy is 75.1\% which is relatively more than what we achieved before.\\\\\\
 	Also we note that all output labels are generated and stored in the corresponding directory for different methods regarding the given test data.
 	
 	\section{Limitations and future works}
-	In this project we tried to predict the sentiment of the stimulus using recorded EEG data. Unfortunately, we failed to achieve an acceptably high accuracy. This is mainly because of the followings:
+	In this project we tried to predict the sentiment of the stimulus using recorded EEG data. Fortunately, we achieved an acceptably high accuracy. In order to achieve higher accuracy above 90\%, the followings can be considered:
 	\begin{itemize}
 		\item \textbf{Features:}\\
-		Only simple time domain and frequency domain features were considered in this project. Time-frequency features like wavelet transform can enhance the performance of the model as its more complicated feature. Another category of features which can be extremely effective is connectivity measures. In this article, the authors used Phase Lock Value as a measure of connectivity between electrodes. Phase Amplitude Coupling is a better measure of connectivity which can be used here.\\\\
+		Only time domain and frequency domain features were considered in this project. Time-frequency features like wavelet transform can enhance the performance of the model as its more complicated feature. Another category of features which can be extremely effective is connectivity measures. In this article, the authors used Phase Lock Value as a measure of connectivity between electrodes. Phase Amplitude Coupling is a better measure of connectivity which can be used here.\\\\
 		Since we are dealing with sentiments, we know that amygdala is involved in this task. We hypothesize that connectivity between amygdala and medial Prefrontal Cortex, encode the type of sentiment and we can search for the sentiment signature here. We note that since our recording are non-invasive EEG, we first have to localize our signals using methods like LORETA.
 		
 		\item \textbf{Models:}\\

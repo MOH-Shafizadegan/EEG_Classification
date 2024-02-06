@@ -57,7 +57,7 @@ save(strcat(directory, '/Testlabels.mat'), 'Testlabels');
 
 clc;
 
-n_hidden = 30;
+n_hidden = 50;
 sigma = 5;
 k = 5;
 [RBF_net, RBF_avgMSE, RBF_accuracy] = train_RBF(n_hidden, sigma, selected_feature_space, Trainlabels, k);

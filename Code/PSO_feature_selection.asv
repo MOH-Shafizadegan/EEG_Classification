@@ -61,7 +61,7 @@ save(strcat(directory, '/MLP_Testlabels.mat'), 'MLP_Testlabels');
 %% RBF
 clc;
 
-n_hidden = 100;
+n_hidden = 30;
 sigma = 5;
 k = 5;
 [RBF_net_2, RBF_avgMSE_2, RBF_accuracy_2] = train_RBF(n_hidden, sigma, ...

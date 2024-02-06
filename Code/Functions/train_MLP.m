@@ -30,11 +30,13 @@ function [net, avgMSE, accuracy] = train_MLP(hiddenLayers, trainX, trainY, k)
 
         % Make predictions on the validation sets
         valPred = net(foldValX');
+        valPred(valPred >= 0) = 1;
+        valPred(valPred < 0) = -1;
 
         % Calculate the MSE for the validation set
         foldMSE(fold) = mean((valPred - foldValY).^2);
         
-        foldAccuracy(fold) = sum(round(valPred) == foldValY) / numel(foldValY)
+        foldAccuracy(fold) = sum(valPred == foldValY) / numel(foldValY)
 
         fprintf("Step %d / %d ... \n", fold, k)
     end

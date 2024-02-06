@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2022.7.25)  4 FEB 2024 10:06
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2022.7.25)  6 FEB 2024 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,10 +516,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 582--584
 
  []
 
-File: Fig/F11.png Graphic file (type bmp)
-<Fig/F11.png>
 File: Fig/F10.png Graphic file (type bmp)
 <Fig/F10.png>
+File: Fig/F11.png Graphic file (type bmp)
+<Fig/F11.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 587--589
 

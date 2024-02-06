@@ -7,7 +7,7 @@ function result = calc_feature_med_freq(data, fs)
     
     for i=1:n_trials
        for j=1:n_channels
-           result(j,i) = medfreq(data(j, :, i), fs);
+           result(i,j) = medfreq(data(j, :, i), fs);
        end
        fprintf("Step %d / %d ... \n", i, n_trials);
     end
